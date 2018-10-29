@@ -1,24 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Cards View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CardsViewController" customModule="tinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nav_bar" translatesAutoresizingMaskIntoConstraints="NO" id="5hU-PC-SAM">
+                                <rect key="frame" x="0.0" y="20" width="375" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="V6j-Oe-8Yt"/>
+                                    <constraint firstAttribute="width" constant="375" id="oig-8W-BiL"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ryan" translatesAutoresizingMaskIntoConstraints="NO" id="dwQ-fP-4rw">
+                                <rect key="frame" x="0.0" y="99" width="375" height="340"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="Azb-xj-24Q"/>
+                                    <constraint firstAttribute="height" constant="340" id="oFZ-YY-M4n"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="aKW-13-C9w" appends="YES" id="IEz-X6-AYS"/>
+                                    <outletCollection property="gestureRecognizers" destination="qSH-WJ-Wcj" appends="YES" id="AJG-oS-4Ak"/>
+                                </connections>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="action_buttons" translatesAutoresizingMaskIntoConstraints="NO" id="Fj1-Nu-LAG">
+                                <rect key="frame" x="67" y="469" width="240" height="108"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Fj1-Nu-LAG" secondAttribute="bottom" constant="90" id="3sS-DX-Svb"/>
+                            <constraint firstItem="5hU-PC-SAM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4pc-Lo-RMC"/>
+                            <constraint firstItem="Fj1-Nu-LAG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="FUG-q0-7UB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fj1-Nu-LAG" secondAttribute="trailing" constant="68" id="KhE-pZ-VFY"/>
+                            <constraint firstItem="dwQ-fP-4rw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WTi-MY-UCB"/>
+                            <constraint firstItem="dwQ-fP-4rw" firstAttribute="top" secondItem="5hU-PC-SAM" secondAttribute="bottom" constant="10" id="ZS1-Fg-wPG"/>
+                            <constraint firstItem="dwQ-fP-4rw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cSZ-2F-fwH"/>
+                            <constraint firstItem="5hU-PC-SAM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fMt-LG-lu8"/>
+                            <constraint firstItem="5hU-PC-SAM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="w6T-iy-1X0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="dwQ-fP-4rw" id="ivT-0m-zon"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="aKW-13-C9w">
+                    <connections>
+                        <action selector="didPan:" destination="BYZ-38-t0r" id="zBp-9Q-aiA"/>
+                    </connections>
+                </panGestureRecognizer>
+                <tapGestureRecognizer id="qSH-WJ-Wcj">
+                    <connections>
+                        <action selector="didPan:" destination="BYZ-38-t0r" id="bQT-D4-Fgt"/>
+                        <segue destination="cVP-fJ-cXz" kind="presentation" id="Zh1-x3-FeW"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="125.59999999999999" y="133.5832083958021"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="Vn9-wt-WhE">
+            <objects>
+                <viewController id="cVP-fJ-cXz" customClass="ProfileViewController" customModule="tinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BI7-qQ-dOo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ryan" translatesAutoresizingMaskIntoConstraints="NO" id="8xu-pt-TPI">
+                                <rect key="frame" x="0.0" y="103" width="375" height="340"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="NEQ-6H-FgJ"/>
+                                    <constraint firstAttribute="height" constant="340" id="nVN-n8-22v"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nav_bar2" translatesAutoresizingMaskIntoConstraints="NO" id="noC-LX-WQ8">
+                                <rect key="frame" x="0.0" y="20" width="375" height="69"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="Egn-2l-kUY"/>
+                                    <constraint firstAttribute="width" constant="375" id="yWI-o3-rPr"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="EjC-wN-dFc" appends="YES" id="HDV-1e-Cqm"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="noC-LX-WQ8" firstAttribute="top" secondItem="GMi-bE-NO9" secondAttribute="top" id="9X7-m9-e55"/>
+                            <constraint firstItem="8xu-pt-TPI" firstAttribute="leading" secondItem="GMi-bE-NO9" secondAttribute="leading" id="IJb-mb-GIr"/>
+                            <constraint firstItem="noC-LX-WQ8" firstAttribute="trailing" secondItem="GMi-bE-NO9" secondAttribute="trailing" id="U36-c1-HgR"/>
+                            <constraint firstItem="8xu-pt-TPI" firstAttribute="top" secondItem="noC-LX-WQ8" secondAttribute="bottom" constant="14" id="Yvh-Qq-ibh"/>
+                            <constraint firstItem="8xu-pt-TPI" firstAttribute="trailing" secondItem="GMi-bE-NO9" secondAttribute="trailing" id="n2T-hV-gJw"/>
+                            <constraint firstItem="noC-LX-WQ8" firstAttribute="leading" secondItem="GMi-bE-NO9" secondAttribute="leading" id="pAQ-sq-b9l"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GMi-bE-NO9"/>
+                    </view>
+                    <connections>
+                        <outlet property="profileImage" destination="8xu-pt-TPI" id="E17-ne-yrc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ofT-E2-mun" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="EjC-wN-dFc">
+                    <connections>
+                        <action selector="didTapDone:" destination="cVP-fJ-cXz" id="hBs-YJ-KPs"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1118" y="86"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="action_buttons" width="320" height="108"/>
+        <image name="nav_bar" width="320" height="65"/>
+        <image name="nav_bar2" width="320" height="65"/>
+        <image name="ryan" width="449" height="514"/>
+    </resources>
 </document>

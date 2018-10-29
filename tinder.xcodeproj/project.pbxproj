@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		500DD40221867A3D005CB7B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DD40121867A3D005CB7B7 /* AppDelegate.swift */; };
-		500DD40421867A3D005CB7B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DD40321867A3D005CB7B7 /* ViewController.swift */; };
 		500DD40721867A3D005CB7B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 500DD40521867A3D005CB7B7 /* Main.storyboard */; };
 		500DD40921867A3E005CB7B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 500DD40821867A3E005CB7B7 /* Assets.xcassets */; };
 		500DD40C21867A3E005CB7B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 500DD40A21867A3E005CB7B7 /* LaunchScreen.storyboard */; };
 		500DD41721867A3E005CB7B7 /* tinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DD41621867A3E005CB7B7 /* tinderTests.swift */; };
 		500DD42221867A3E005CB7B7 /* tinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DD42121867A3E005CB7B7 /* tinderUITests.swift */; };
+		500DD43021867AED005CB7B7 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DD42F21867AED005CB7B7 /* CardsViewController.swift */; };
+		500DD43221867D7C005CB7B7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DD43121867D7C005CB7B7 /* ProfileViewController.swift */; };
+		500DD43421867EF6005CB7B7 /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DD43321867EF6005CB7B7 /* FadeTransition.swift */; };
+		500DD43621867F16005CB7B7 /* BaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DD43521867F16005CB7B7 /* BaseTransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,6 @@
 /* Begin PBXFileReference section */
 		500DD3FE21867A3D005CB7B7 /* tinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		500DD40121867A3D005CB7B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		500DD40321867A3D005CB7B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		500DD40621867A3D005CB7B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		500DD40821867A3E005CB7B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		500DD40B21867A3E005CB7B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +49,10 @@
 		500DD41D21867A3E005CB7B7 /* tinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		500DD42121867A3E005CB7B7 /* tinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tinderUITests.swift; sourceTree = "<group>"; };
 		500DD42321867A3E005CB7B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		500DD42F21867AED005CB7B7 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
+		500DD43121867D7C005CB7B7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		500DD43321867EF6005CB7B7 /* FadeTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
+		500DD43521867F16005CB7B7 /* BaseTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +104,14 @@
 			isa = PBXGroup;
 			children = (
 				500DD40121867A3D005CB7B7 /* AppDelegate.swift */,
-				500DD40321867A3D005CB7B7 /* ViewController.swift */,
 				500DD40521867A3D005CB7B7 /* Main.storyboard */,
+				500DD43121867D7C005CB7B7 /* ProfileViewController.swift */,
+				500DD43321867EF6005CB7B7 /* FadeTransition.swift */,
+				500DD43521867F16005CB7B7 /* BaseTransition.swift */,
 				500DD40821867A3E005CB7B7 /* Assets.xcassets */,
 				500DD40A21867A3E005CB7B7 /* LaunchScreen.storyboard */,
 				500DD40D21867A3E005CB7B7 /* Info.plist */,
+				500DD42F21867AED005CB7B7 /* CardsViewController.swift */,
 			);
 			path = tinder;
 			sourceTree = "<group>";
@@ -256,7 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				500DD40421867A3D005CB7B7 /* ViewController.swift in Sources */,
+				500DD43221867D7C005CB7B7 /* ProfileViewController.swift in Sources */,
+				500DD43621867F16005CB7B7 /* BaseTransition.swift in Sources */,
+				500DD43021867AED005CB7B7 /* CardsViewController.swift in Sources */,
+				500DD43421867EF6005CB7B7 /* FadeTransition.swift in Sources */,
 				500DD40221867A3D005CB7B7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
